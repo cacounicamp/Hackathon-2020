@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACo Hackathon 2020</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        /* Geral */
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Ubuntu Mono', monospace;
+            display: block;
+        }
+
+        h1{
+            color:red;
+            margin:0;
+        }
+
+        main{
+            display: grid;
+            grid-template-areas: "menu content content content content content content";
+            grid-template-columns: repeat(7,1fr);
+            grid-template-rows: 1fr;
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            height: 100%;
+        }
+
+        /* Scroll bar */
+        /* ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1b1b1b; 
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background: rgba(223, 223, 223, 0.74); 
+            border-radius: 2em;
+        } */
+
+        /* Menu */
+        nav{
+            grid-area: menu;
+            width: 100%;
+            height: 100%;
+            margin: 30px 0px 30px 0px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-items: center;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 20%;
+            height: 90%;
+            position:fixed;
+            padding: 0;
+            margin:0px 0px 20px 0px;
+            list-style: none;
+        }
+        
+        nav ul li{
+            color:white;
+            list-style: none;
+            width: 100px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        nav ul li a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav ul li a img{
+            margin-bottom: 10px;
+        }
+
+        /* Seções */
+        .content{
+            grid-area: content;
+            scroll-behavior: smooth;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .content section{
+            padding: 90px 10px 0px 10px;
+            display: flex;
+            justify-content: center;
+            min-width: 100%;
+        }
+
+        .content section:nth-child(1){
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        .content section div.background{
+            height: 700px;
+            background-repeat: no-repeat;
+            border: 2px solid #5d5a5a;
+            max-width: 1088px;
+            max-height: 580px;
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        .content section div.background::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .content section div.background::-webkit-scrollbar-track {
+            background: #1b1b1b; 
+        }
+    
+        .content section div.background::-webkit-scrollbar-thumb {
+            background: rgba(223, 223, 223, 0.74); 
+            border-radius: 2em;
+        }
+
+        .content section div.background .terminal-options{
+            min-height: 30px;
+            background-color: #5d5a5a;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            
+        }
+
+        .content section div.background .terminal-options > div{
+            min-width: 33%;
+        }
+
+        .content section div.background .terminal-options .buttons{
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            font-family: Nunito, Arial, Helvetica, sans-serif;
+            padding: 0px 5px 0px 5px;
+        }
+
+        .content section div.background .terminal-options .buttons{
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            justify-content: space-around;
+            width: 70px;
+            font-family: Nunito, Arial, Helvetica, sans-serif;
+        }
+
+        .content section div.background .terminal-options .buttons > div:nth-child(2){
+            border: 2px solid white;
+            width: 9px;
+            height: 9px;
+        }
+
+        .content section div.background .terminal-options .buttons > div:nth-child(3){
+            border-bottom: 2px solid white;
+            width: 10px;
+            height: 9px;
+        }
+
+        .content section div.background .terminal-options .title{
+            font-weight: bold;
+            font-size: 17px;
+            min-width: 33%;
+            text-align: center;
+        }
+
+        /* Capa */
+        .content section:nth-child(1){
+            background-image: url(./home.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .content section:nth-child(1) > div{
+            height: 750px;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+
+        }
+
+        .content section:nth-child(1) > div > img{
+            object-fit: cover;
+            object-position: 50% 50%;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa{
+            color: white;
+            /* position: absolute; */
+            top: 0;
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            
+        }
+
+        .content section:nth-child(1) > div.capa > div.logo{
+            display: flex;
+            justify-content: center;
+        }
+
+        .content section:nth-child(1) > div.capa > div.logo > img{
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa > span{
+            min-width: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text{
+            text-align: center;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > .title{
+            font-size: 84px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > .subtitle{
+            font-size: 45px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > div{
+            width:100%;
+        } 
+
+        .content section:nth-child(1) > div.capa > div.data{
+            text-align: left;
+            font-size: 30px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > div{
+            width:100%;
+        } 
+
+        .content section:nth-child(1) > div.capa > div.logo > img{
+            max-width: 100px;
+        }
+        /* Fim da capa */
+
+        .content section div.background .text-container{
+            padding: 0px 35px 60px 35px;
+            top: 0px;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            max-width: 1018px;
+            max-height: 480px;
+        }
+
+        .content section div.background .text-container p{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .content section div.background .text-container p.section{
+            padding-top: 20px;
+        }
+
+        .content section div.background .text-container span{
+            color: #D50000;
+        }
+
+        @media(max-width:700px){
+            main{
+                display: flex;
+                /* grid-template-areas: "menu content content content content";
+                grid-template-columns: repeat(5,1fr); */
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .content section{
+                padding: 90px 10px 0px 10px;
+            }
+
+            nav{
+                display: none;
+            } 
+
+            .content section:nth-child(1) > div.capa{
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+            .content section:nth-child(1) > div.capa > div.text{
+                margin-top: 60px;
+                margin-bottom: 60px;
+            }
+
+            .content section div.background .text-container span{
+                display: none;
+            }
+
+            .content section div.background .text-container p.section > span{
+                display: block;
+            }
+        }
+
+        @media(max-width:450px){
+            .content section:nth-child(1) > div.capa > div.text > .title{
+                font-size: 67px;
+            }
+
+            .content section:nth-child(1) > div.capa > div.text > .subtitle{
+                font-size: 35px;
+            }
+
+            .content section:nth-child(1) > div.capa > div.data{
+                font-size: 25px;
+            }
+        }
+
+    </style>
+
+    <main>
+        <nav>
+            <ul>
+                <li> <a href="#manual"> <img src="./menu/manual.svg"/> Manual </a> </li>
+                <li> <a href="https://bit.ly/democracia-a-distancia"> <img src="./menu/inscricao.svg"/> Inscrição </a> </li>
+                <li> <a href="#setup"> <img src="./menu/setup.svg"/> Orientações Setup </a> </li>
+                <li> <a href="#evento"> <img src="./menu/dia.svg"/> Orientações Evento </a> </li>
+                <li> <a href="#contato"> <img src="./menu/contato.svg"/> Contato </a> </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section> 
+                <!-- <div>
+                    <img src="./home-vazia.png"/>
+                </div> -->
+                <div class="capa">
+                    <div class="logo">
+                        <img src="./logo-caco.png" />
+                    </div>
+                    <div class="text">
+                        <div class="title"> hackathon </div>
+                        <div class="subtitle"> democracia à distância </div>
+                    </div>
+                    <div class="data">
+                        <div>04 set - </div>
+                        <div>06 set</div>
+                    </div>
+                </div>
+            </section>
+            <section id="manual">
+                <div class="background manual">
+                    <div class="terminal-options">
+                        <div>
+                            <div class="buttons">
+                                <div> X </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="title"> Manual </div>
+                    </div>
+                    <div class="text-container">
+                        <p class="section">— ! — friend_ [friend_@10.3.2.91] has joined #democraciaadistancia.</p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+
+                    </div>
+                </div>
+            </section>
+            <section id="setup">
+                <div class="background setup">
+                    <div class="terminal-options">
+                        <div>
+                            <div class="buttons">
+                                <div> X </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="title"> Setup </div>
+                    </div>
+                    <div class="text-container">
+                        <p class="section">Eai computeires, vamos se preparar pro evento?</p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> O setup tem como objetivo introduzir alguns conceitos que podem te ajudar a fazer
+                            uma solução bem legal no hackathon, e antecipar a configuração do seu computador para rodar o que for necessário.</p>
+                        
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+O que eu vou ver no setup?
+Nosso setup foi organizado pra te preparar para o desenvolvimento de um projeto web (em outras palavras, um site)
+Portanto, preparamos apresentações voltadas para conceitos essenciais de projetos web que são: HTML, CSS e Javascript.
+
+Além disso, preparamos o setup para te explicar sobre VueJS, que é um framework de javascript, que vai te ajudar a organizar o seu projeto
+e também no desenvolvimento da lógica que o seu site terá =) 
+Para isso preparamos apresentações que explicam sobre esse framework, e deixamos pronto um projeto base, que você e seu grupo poderão utilizar no evento.
+
+** Portanto, recomendamos bastante que você utilize esse framework, pois nos preparamos para isso e com certeza é um conhecimento que acrescenta bastante na sua experiência desenvolvendo. **
+
+O setup é dividido em 4 pontos:
+1. HTML e CSS - Elementos de uma página
+2. Javascript - Se familiarizar com a linguagem
+3. VueJS - Organização do projeto e funcionalidades da sua página
+4. Github - Versionar seu projeto 
+
+
+Como vai funcionar o setup?
+Montamos um cronograma de estudo para você, e organizamos uma coleta de referências que explicam os conceitos.
+Além disso organizamos meets onde iremos aprofundar sobre os 4 conceitos (Html+css, javascript, vueJS e git) e tirar dúvidas.
+Nossas apresentações (slides) do meet são sobre cada uma das tecnologias, e elas ficarão disponíveis a partir do primeiro dia do setup.
+
+Agosto
+03 - Seg - HTML + CSS
+04 - Ter - HTML + CSS
+05 - Qua - Meet sobre HTML + CSS (18h) 
+06 - Qui - JS
+07 - Sex - Meet sobre JS (18h)
+08 - Sáb - Vuejs
+09 - Dom - Vuejs
+10 - Seg - Vuejs
+11 - Ter - Meet sobre Vuejs (18h)
+12 - Qua - Git
+13 - Qui - Meet sobre Git (18h)
+14 - Sex - HACKATHON 
+15 - Sáb - HACKATHON
+16 - Dom - HACKATHON
+
+Links sobre cada assunto
+
+Apresentações (slides de explicação):
+// Os links para as apresentações ficarão disponíveis a partir do dia 03 de Agosto
+
+Hoje tem meet? Não 
+Meet de hoje: 
+// O link do meet do dia ficará disponível aqui a partir das 17h30 =) 
+
+                    </div>
+                </div>
+            </section>
+            <section id="evento">
+                <div class="background dia">
+                    <div class="terminal-options">
+                        <div>
+                            <div class="buttons">
+                                <div> X </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="title"> Orientações para o evento </div>
+                    </div>
+                    <div class="text-container">
+                        <p class="section">— ! — friend_ [friend_@10.3.2.91] has joined #democraciaadistancia.</p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+                    </div>
+                </div>
+            </section>
+            <section id="contato">
+                <div class="background contato">
+                    <div class="terminal-options">
+                        <div>
+                            <div class="buttons">
+                                <div> X </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="title"> Contato </div>
+                    </div>
+                    <div class="text-container">
+                        <p class="section">— ! — friend_ [friend_@10.3.2.91] has joined #democraciaadistancia.</p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Olá, computeire.</p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Seja bem-vinde ao hackathon Democracia à Distância. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Como garantir a democracia quando os representantes democráticos oficiais falham em nos representar? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
