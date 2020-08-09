@@ -101,22 +101,97 @@
             grid-area: content;
             scroll-behavior: smooth;
             width: 100%;
-            height: 100%;
-            overflow-x: hidden;
         }
 
         .content section{
             padding: 90px 10px 0px 10px;
             display: flex;
             justify-content: center;
-            min-width: 100%;
         }
 
+        /* Capa */
         .content section:nth-child(1){
             margin: 0;
             padding: 0;
             display: block;
         }
+
+        .content section:nth-child(1){
+            background-image: url(./home.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .content section:nth-child(1) > div{
+            height: 750px;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+
+        }
+
+        .content section:nth-child(1) > div > img{
+            object-fit: cover;
+            object-position: 50% 50%;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa{
+            color: white;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            
+        }
+
+        .content section:nth-child(1) > div.capa > div.logo{
+            display: flex;
+            justify-content: center;
+        }
+
+        .content section:nth-child(1) > div.capa > div.logo > img{
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa > span{
+            min-width: 100%;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text{
+            text-align: center;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > .title{
+            font-size: 84px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > .subtitle{
+            font-size: 45px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > div{
+            width:100%;
+        } 
+
+        .content section:nth-child(1) > div.capa > div.data{
+            text-align: left;
+            font-size: 30px;
+        }
+
+        .content section:nth-child(1) > div.capa > div.text > div{
+            width:100%;
+        } 
+
+        .content section:nth-child(1) > div.capa > div.logo > img{
+            max-width: 100px;
+        }
+        /* Fim da capa */
 
         .content section div.background{
             height: 700px;
@@ -125,6 +200,7 @@
             max-width: 1088px;
             max-height: 580px;
             border-radius: 3px;
+            max-width: 1092px;
             width: 100%;
         }
 
@@ -191,86 +267,6 @@
             text-align: center;
         }
 
-        /* Capa */
-        .content section:nth-child(1){
-            background-image: url(./home.png);
-            background-position: center;
-            background-size: cover;
-        }
-
-        .content section:nth-child(1) > div{
-            height: 750px;
-            display: flex;
-            justify-items: center;
-            justify-content: center;
-
-        }
-
-        .content section:nth-child(1) > div > img{
-            object-fit: cover;
-            object-position: 50% 50%;
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        .content section:nth-child(1) > div.capa{
-            color: white;
-            /* position: absolute; */
-            top: 0;
-            display: flex;
-            /* flex-wrap: wrap; */
-            justify-content: space-around;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-            
-        }
-
-        .content section:nth-child(1) > div.capa > div.logo{
-            display: flex;
-            justify-content: center;
-        }
-
-        .content section:nth-child(1) > div.capa > div.logo > img{
-            object-fit: contain;
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .content section:nth-child(1) > div.capa > span{
-            min-width: 100%;
-        }
-
-        .content section:nth-child(1) > div.capa > div.text{
-            text-align: center;
-        }
-
-        .content section:nth-child(1) > div.capa > div.text > .title{
-            font-size: 84px;
-        }
-
-        .content section:nth-child(1) > div.capa > div.text > .subtitle{
-            font-size: 45px;
-        }
-
-        .content section:nth-child(1) > div.capa > div.text > div{
-            width:100%;
-        } 
-
-        .content section:nth-child(1) > div.capa > div.data{
-            text-align: left;
-            font-size: 30px;
-        }
-
-        .content section:nth-child(1) > div.capa > div.text > div{
-            width:100%;
-        } 
-
-        .content section:nth-child(1) > div.capa > div.logo > img{
-            max-width: 100px;
-        }
-        /* Fim da capa */
-
         .content section div.background .text-container{
             padding: 0px 35px 60px 35px;
             top: 0px;
@@ -299,8 +295,6 @@
         @media(max-width:700px){
             main{
                 display: flex;
-                /* grid-template-areas: "menu content content content content";
-                grid-template-columns: repeat(5,1fr); */
                 margin: 0;
                 padding: 0;
                 width: 100%;
@@ -347,6 +341,16 @@
             .content section:nth-child(1) > div.capa > div.data{
                 font-size: 25px;
             }
+
+            .content section div.background .text-container{
+                max-height: 100%;
+                position: static;
+            }
+
+            .content section div.background{
+                max-height: 100%;
+                height: auto;
+            }
         }
 
     </style>
@@ -363,9 +367,6 @@
         </nav>
         <div class="content">
             <section> 
-                <!-- <div>
-                    <img src="./home-vazia.png"/>
-                </div> -->
                 <div class="capa">
                     <div class="logo">
                         <img src="./logo-caco.png" />
@@ -484,53 +485,6 @@
                         <p> <span>19:06 &lt;CACo&gt; </span> A resposta é: </p>
                         <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
 
-O que eu vou ver no setup?
-Nosso setup foi organizado pra te preparar para o desenvolvimento de um projeto web (em outras palavras, um site)
-Portanto, preparamos apresentações voltadas para conceitos essenciais de projetos web que são: HTML, CSS e Javascript.
-
-Além disso, preparamos o setup para te explicar sobre VueJS, que é um framework de javascript, que vai te ajudar a organizar o seu projeto
-e também no desenvolvimento da lógica que o seu site terá =) 
-Para isso preparamos apresentações que explicam sobre esse framework, e deixamos pronto um projeto base, que você e seu grupo poderão utilizar no evento.
-
-** Portanto, recomendamos bastante que você utilize esse framework, pois nos preparamos para isso e com certeza é um conhecimento que acrescenta bastante na sua experiência desenvolvendo. **
-
-O setup é dividido em 4 pontos:
-1. HTML e CSS - Elementos de uma página
-2. Javascript - Se familiarizar com a linguagem
-3. VueJS - Organização do projeto e funcionalidades da sua página
-4. Github - Versionar seu projeto 
-
-
-Como vai funcionar o setup?
-Montamos um cronograma de estudo para você, e organizamos uma coleta de referências que explicam os conceitos.
-Além disso organizamos meets onde iremos aprofundar sobre os 4 conceitos (Html+css, javascript, vueJS e git) e tirar dúvidas.
-Nossas apresentações (slides) do meet são sobre cada uma das tecnologias, e elas ficarão disponíveis a partir do primeiro dia do setup.
-
-Agosto
-03 - Seg - HTML + CSS
-04 - Ter - HTML + CSS
-05 - Qua - Meet sobre HTML + CSS (18h) 
-06 - Qui - JS
-07 - Sex - Meet sobre JS (18h)
-08 - Sáb - Vuejs
-09 - Dom - Vuejs
-10 - Seg - Vuejs
-11 - Ter - Meet sobre Vuejs (18h)
-12 - Qua - Git
-13 - Qui - Meet sobre Git (18h)
-14 - Sex - HACKATHON 
-15 - Sáb - HACKATHON
-16 - Dom - HACKATHON
-
-Links sobre cada assunto
-
-Apresentações (slides de explicação):
-// Os links para as apresentações ficarão disponíveis a partir do dia 03 de Agosto
-
-Hoje tem meet? Não 
-Meet de hoje: 
-// O link do meet do dia ficará disponível aqui a partir das 17h30 =) 
-
                     </div>
                 </div>
             </section>
@@ -603,6 +557,9 @@ Meet de hoje:
                         <p> <span>19:06 &lt;CACo&gt; </span> Com muita organização e luta. </p>
                     </div>
                 </div>
+            </section>
+            <section>
+                <!-- Serve só para deixar um espaço no fim, gambiarra, se quiser, alterar o css pra resolver :) -->
             </section>
         </div>
     </main>
