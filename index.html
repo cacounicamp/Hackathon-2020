@@ -12,7 +12,6 @@
     <style>
         /* Geral */
         html,body{
-            height: 100%;
             margin: 0;
             padding: 0;
             background-color: black;
@@ -49,6 +48,21 @@
             background: rgba(223, 223, 223, 0.74); 
             border-radius: 2em;
         } */
+
+        .mobile-link {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border: 1px solid #5d5a5a;
+            border-radius: 20px;
+
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #D50000;
+        }
 
         /* Menu */
         nav{
@@ -145,7 +159,7 @@
             align-items: center;
             max-width: 1200px;
             width: 100%;
-            
+            margin: auto;
         }
 
         .content section:nth-child(1) > div.capa > div.logo{
@@ -292,7 +306,26 @@
             color: #D50000;
         }
 
+        .content section.footer > .footer-container {
+            color: #ffffff;
+            flex-direction: column;
+            align-items: center;
+
+            border-top: 2px solid #5d5a5a;
+            padding: 20px 0;
+            max-width: 1092px;
+            width: 100%;
+        }
+
+        .content section.footer > .footer-container > * {
+            text-align: center;
+        }
+
         @media(max-width:700px){
+            .mobile-link {
+                display: block;
+            }
+
             main{
                 display: flex;
                 margin: 0;
@@ -326,6 +359,12 @@
 
             .content section div.background .text-container p.section > span{
                 display: block;
+            }
+
+            .content section.footer > .footer-container > .madeBy {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
             }
         }
 
@@ -558,10 +597,25 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <!-- Serve só para deixar um espaço no fim, gambiarra, se quiser, alterar o css pra resolver :) -->
+            <section class="footer">
+                <div class="footer-container">
+                    <div>© Copyright 2020: CACo Unicamp </div>
+                    <div class="madeBy">
+                        <span>Design por Camila Porfírio;</span>
+                        <span>Desenvolvido por Giovanna Batalha;</span>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
+    
+    <a 
+        class="mobile-link"
+        target="_blank"
+        href="https://bit.ly/democracia-a-distancia"
+    >
+        Inscreva-se! 
+    </a>
+                
 </body>
 </html>
