@@ -162,12 +162,12 @@
             margin: auto;
         }
 
-        .content section:nth-child(1) > div.capa > div.logo{
+        .content section:nth-child(1) > div.capa > a.logo{
             display: flex;
             justify-content: center;
         }
 
-        .content section:nth-child(1) > div.capa > div.logo > img{
+        .content section:nth-child(1) > div.capa > a.logo > img{
             object-fit: contain;
             max-width: 100%;
             max-height: 100%;
@@ -202,7 +202,7 @@
             width:100%;
         } 
 
-        .content section:nth-child(1) > div.capa > div.logo > img{
+        .content section:nth-child(1) > div.capa > a.logo > img{
             max-width: 100px;
         }
         /* Fim da capa */
@@ -321,6 +321,19 @@
             text-align: center;
         }
 
+        .content section.footer > .footer-container a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .content section div.background .text-container span{
+                display: none;
+            }
+
+            .content section div.background .text-container p.section > span{
+                display: block;
+            }
+
         @media(max-width:700px){
             .mobile-link {
                 display: block;
@@ -351,14 +364,6 @@
             .content section:nth-child(1) > div.capa > div.text{
                 margin-top: 60px;
                 margin-bottom: 60px;
-            }
-
-            .content section div.background .text-container span{
-                display: none;
-            }
-
-            .content section div.background .text-container p.section > span{
-                display: block;
             }
 
             .content section.footer > .footer-container > .madeBy {
@@ -398,7 +403,7 @@
         <nav>
             <ul>
                 <li> <a href="#manual"> <img src="./menu/manual.svg"/> Manual </a> </li>
-                <li> <a href="https://bit.ly/democracia-a-distancia"> <img src="./menu/inscricao.svg"/> Inscrição </a> </li>
+                <li> <a href="https://bit.ly/democracia-a-distancia" target="_blank"> <img src="./menu/inscricao.svg"/> Inscrição </a> </li>
                 <li> <a href="#setup"> <img src="./menu/setup.svg"/> Orientações Setup </a> </li>
                 <li> <a href="#evento"> <img src="./menu/dia.svg"/> Orientações Evento </a> </li>
                 <li> <a href="#contato"> <img src="./menu/contato.svg"/> Contato </a> </li>
@@ -407,9 +412,9 @@
         <div class="content">
             <section> 
                 <div class="capa">
-                    <div class="logo">
+                    <a href="https://www.caco.ic.unicamp.br/" target="_blank" class="logo">
                         <img src="./logo-caco.png" />
-                    </div>
+                    </a>
                     <div class="text">
                         <div class="title"> hackathon </div>
                         <div class="subtitle"> democracia à distância </div>
@@ -585,7 +590,7 @@
             </section>
             <section class="footer">
                 <div class="footer-container">
-                    <div>© Copyright 2020: CACo Unicamp </div>
+                    <div>© Copyright 2020: <a href="https://www.caco.ic.unicamp.br/" target="_blank">CACo Unicamp</a> </div>
                     <div class="madeBy">
                         <span>Design por Camila Porfírio;</span>
                         <span>Desenvolvido por Giovanna Batalha;</span>
