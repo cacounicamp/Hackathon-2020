@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CACo Hackathon 2020</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
@@ -338,6 +342,16 @@
             display: block;
         }
 
+        .version-2{
+            font-family: 'Amatic SC';
+            /* font-family: 'Pangolin'; */
+            /* font-family: 'Bangers'; */
+            font-size: larger;
+            /* color: #D50000; */
+            letter-spacing: 0.1em;
+            padding: 5px;
+        }
+
         @media(max-width:700px){
             .mobile-link {
                 display: block;
@@ -407,7 +421,7 @@
         <nav>
             <ul>
                 <li> <a href="#manual"> <img src="./menu/manual.svg"/> Manual </a> </li>
-                <li> <a href="https://bit.ly/democracia-a-distancia" target="_blank"> <img src="./menu/inscricao.svg"/> Se inscreva! </a> </li>
+                <li> <a href="#inscricao"> <img src="./menu/inscricao.svg"/> Se inscreva! </a> </li>
                 <li> <a href="#setup"> <img src="./menu/setup.svg"/> Orientações Setup </a> </li>
                 <li> <a href="#evento"> <img src="./menu/dia.svg"/> Orientações Evento </a> </li>
                 <li> <a href="#contato"> <img src="./menu/contato.svg"/> Contato </a> </li>
@@ -426,6 +440,39 @@
                     <div class="data">
                         <div>04 set - </div>
                         <div>06 set</div>
+                    </div>
+                </div>
+            </section>
+            <section id="inscricao">
+                <div class="background manual">
+                    <div class="terminal-options">
+                        <div>
+                            <div class="buttons">
+                                <div> X </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="title"> Não conseguiu se inscrever? </div>
+                    </div>
+                    <div class="text-container">
+                        <p class="section">— ! — friend_ [friend_@10.3.2.91] has joined #democraciaadistancia versão independente.</p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Não conseguiu se inscrever? </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Nós do CACo fechamos as inscrições antes do esperado.. :/ </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Isso porque tivemos um número de inscritos bem maior do que imaginamos.. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Para não afetar nossa organização e qualidade das monitorias durante o evento, decidimos encerrar baseado no número de inscritos que já tinha. </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Mas perai!!! Não para de ler ainda, porque pensamos em soluções pra você! </p>
+
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Pensando em você, que quer refletir sobre esse grande problema que vivemos no momento, com a dificuldade de nos organizarmos à distancia, queremos te incentivar a combinar com amigos e tentar sim pensar sobre isso! </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Estamos iniciando a <b class="version-2">Versão independente do Hackathon Democracia à Distância</b>, em que não poderemos ajudar com monitoria de prototipação ou desenvolvimento, mas tentamos pensar em outras maneiras de te inserir nesse evento!</p>
+                        
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Se interessou? Já combina com os amigos, não deixa morrer a ideia </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Nos mande uma mensagem falando que tem interesse </p>
+                        <p> <span>19:06 &lt;CACo&gt; </span> Mais informações em breve! </p>
+
+
+
                     </div>
                 </div>
             </section>
@@ -488,7 +535,7 @@
                         <p> <span>19:06 &lt;CACo&gt; </span> Nesse hackathon pensamos que a solução tem muito a ver com um site, que poderia ser acessado por todos junto com o meet de uma assembléia por exemplo. </p>
                         <p> <span>19:06 &lt;CACo&gt; </span> Por isso focamos em preparar toda uma estrutura voltada para o desenvolvimento web (site), do básico à algo um pouco mais avançado.</p>
                         
-                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Para saber mais, acesse o <a href="">Manual completo</a>.</p>
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Para saber mais, acesse o <a target="_blank" href="http://bit.ly/manual-hackathon">Manual completo</a>.</p>
 
                     </div>
                 </div>
@@ -540,7 +587,7 @@
                         <p> <span>19:06 &lt;CACo&gt; </span> 2. Separamos tutoriais que explicam cada um dos conceitos. </p>
                         <p> <span>19:06 &lt;CACo&gt; </span> 3. Organizamos meets onde iremos falar sobre os conceitos e tirar dúvidas. </p>
                         
-                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> <b>Não perca os meets! Veja o cronograma do setup e os tutoriais no <a href="https://www.figma.com/file/IPh69MG61j9lvCg6xkNysu/Untitled?node-id=0%3A1">Manual</a>. </b></p>
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> <b>Não perca os meets! <a target="_blank" href="http://bit.ly/setup-hackathon-2020"> Veja o cronograma do setup e os tutoriais aqui</a>.</b></p>
 
                         <p class="section"> <span>19:06 &lt;CACo&gt; </span> <b>Tem meet hoje? Não D: </b></p>
                     </div>
@@ -566,7 +613,7 @@
 
                         <p class="section"> <span>19:06 &lt;CACo&gt; </span> Mais informações em breve </p>
 
-                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Quer saber mais? Acesse o <a href="">Manual</a></p>
+                        <p class="section"> <span>19:06 &lt;CACo&gt; </span> Quer saber mais? Acesse o <a target="_blank" href="http://bit.ly/manual-hackathon">Manual</a></p>
                     </div>
                 </div>
             </section>
@@ -601,7 +648,7 @@
             </section>
             <section class="footer">
                 <div class="footer-container">
-                    <div>© Copyright 2020: <a href="https://www.caco.ic.unicamp.br/" target="_blank">CACo Unicamp</a> </div>
+                    <div>© Copyleft 2020: <a href="https://www.caco.ic.unicamp.br/" target="_blank">CACo Unicamp</a> </div>
                     <div class="madeBy">
                         <span>Design por Camila Porfírio;</span>
                         <span>Desenvolvido por Giovanna Batalha;</span>
@@ -613,8 +660,7 @@
     
     <a 
         class="mobile-link"
-        target="_blank"
-        href="https://bit.ly/democracia-a-distancia"
+        href="#inscricao"
     >
         Inscreva-se! 
     </a>
